@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class StudentHttpReader extends StudentAbstractReader{
     private URL url;
+
     public StudentHttpReader(URL url){
         this.url = url;
     }
@@ -24,7 +25,7 @@ public class StudentHttpReader extends StudentAbstractReader{
     }
 
     public ArrayList<Student> LoadStudentScore() throws IOException{
-        ArrayList<Student> students = new ArrayList<>();
+        ArrayList<Student> students = StudentManager.students;
         URLConnection urlConnection = this.getUrl().openConnection();
         InputStream inputStream = urlConnection.getInputStream();
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
@@ -32,17 +33,21 @@ public class StudentHttpReader extends StudentAbstractReader{
         String string;
         while((string = bufferedReader.readLine()) != null){
             if(string.trim().isEmpty()) continue;
-
+            Student student = AddStudentInformation(string);
         }
-        return null;
+        bufferedReader.close();
+        return students;
     }
 
-    public Student CreateStudent(String stu){
+    public Student AddStudentInformation(String stu){
         String[] str;
         str = stu.split("\t");
-        Student student = new Student();
-        student.id = str[0];
-        student.name = str[1];
+        Student student = StudentManager.FindById(str[0]);
+        if(student == null) return null;
+        String object = StudentSubjectReader.getSubject(this.url);
+        if(object.equals("math.txt")) student.MathScore = str[1];
+        else if(object.equals("english.txt")) student.EnglishScore = str[1];
+        else if(object.equals("chinese.txt")) student.ChineseScore = str[1];
         return student;
     }
 

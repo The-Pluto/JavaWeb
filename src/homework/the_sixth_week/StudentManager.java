@@ -5,9 +5,7 @@ import java.util.ArrayList;
 
 public class StudentManager {
     Student student;
-    private ArrayList<Student> students = new ArrayList<>();
-
-
+    public static ArrayList<Student> students = new ArrayList<>();
 
     public void AddStudent(Student student){
         students.add(student);
@@ -35,7 +33,7 @@ public class StudentManager {
 
     public void PrintAll(){
         for(Student stu:students){
-            System.out.format("%s, %s\n",stu.id , stu.name);
+            System.out.format("%s, %s, %s, %s, %s\n",stu.id , stu.name , stu.MathScore , stu.getChineseScore() , stu.EnglishScore);
         }
         return;
     }
@@ -78,4 +76,11 @@ public class StudentManager {
         return student;
     }
 
+    public static Student FindById(String id){
+        for(Student stu:students){
+            if(stu.id.equals(id)) return stu;
+        }
+        System.out.println("找不到该学生");
+        return null;
+    }
 }

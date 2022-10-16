@@ -3,15 +3,15 @@ package homework.the_sixth_week;
 public class Student {
     String id;
     String name;
-    int MathScore;
-    int ChineseScore;
-    int EnglishScore;
+    String MathScore;
+    String ChineseScore;
+    String EnglishScore;
 
     public Student(){
 
     }
 
-    public Student(String id,String name,int mathScore,int chineseScore,int englishScore){
+    public Student(String id,String name,String mathScore,String chineseScore,String englishScore){
         this.id = id;
         this.name = name;
         this.MathScore = mathScore;
@@ -28,15 +28,15 @@ public class Student {
         this.name = name;
     }
 
-    public void setChineseScore(int chineseScore) {
+    public void setChineseScore(String chineseScore) {
         this.ChineseScore = chineseScore;
     }
 
-    public void setEnglishScore(int englishScore) {
+    public void setEnglishScore(String englishScore) {
         this.EnglishScore = englishScore;
     }
 
-    public void setMathScore(int mathScore) {
+    public void setMathScore(String mathScore) {
         this.MathScore = mathScore;
     }
 
@@ -48,15 +48,15 @@ public class Student {
         return this.name;
     }
 
-    public int getChineseScore() {
+    public String getChineseScore() {
         return this.ChineseScore;
     }
 
-    public int getMathScore(){
+    public String getMathScore(){
         return this.MathScore;
     }
 
-    public int getEnglishScore() {
+    public String getEnglishScore() {
         return EnglishScore;
     }
 
