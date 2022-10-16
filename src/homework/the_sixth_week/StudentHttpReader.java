@@ -45,9 +45,10 @@ public class StudentHttpReader extends StudentAbstractReader{
         Student student = StudentManager.FindById(str[0]);
         if(student == null) return null;
         String object = StudentSubjectReader.getSubject(this.url);
-        if(object.equals("math.txt")) student.MathScore = str[1];
-        else if(object.equals("english.txt")) student.EnglishScore = str[1];
-        else if(object.equals("chinese.txt")) student.ChineseScore = str[1];
+        int score = Integer.parseInt(str[1]);
+        if(object.equals("math.txt")) student.MathScore = score;
+        else if(object.equals("english.txt")) student.EnglishScore = score;
+        else if(object.equals("chinese.txt")) student.ChineseScore = score;
         return student;
     }
 

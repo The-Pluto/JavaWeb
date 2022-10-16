@@ -1,24 +1,27 @@
 package homework.the_sixth_week;
 
-public class Student {
+public class Student implements Comparable<Student>{
     String id;
     String name;
-    String MathScore;
-    String ChineseScore;
-    String EnglishScore;
+    int MathScore;
+    int ChineseScore;
+    int EnglishScore;
+
+    int totalScore;
+
+    double averageScore;
 
     public Student(){
 
     }
 
-    public Student(String id,String name,String mathScore,String chineseScore,String englishScore){
+    public Student(String id,String name,int mathScore,int chineseScore,int englishScore){
         this.id = id;
         this.name = name;
         this.MathScore = mathScore;
         this.ChineseScore = chineseScore;
         this.EnglishScore = englishScore;
     }
-
 
     public void setId(String id) {
         this.id = id;
@@ -28,15 +31,15 @@ public class Student {
         this.name = name;
     }
 
-    public void setChineseScore(String chineseScore) {
+    public void setChineseScore(int chineseScore) {
         this.ChineseScore = chineseScore;
     }
 
-    public void setEnglishScore(String englishScore) {
+    public void setEnglishScore(int englishScore) {
         this.EnglishScore = englishScore;
     }
 
-    public void setMathScore(String mathScore) {
+    public void setMathScore(int mathScore) {
         this.MathScore = mathScore;
     }
 
@@ -48,19 +51,32 @@ public class Student {
         return this.name;
     }
 
-    public String getChineseScore() {
+    public int getChineseScore() {
         return this.ChineseScore;
     }
 
-    public String getMathScore(){
+    public int getMathScore(){
         return this.MathScore;
     }
 
-    public String getEnglishScore() {
+    public int getEnglishScore() {
         return EnglishScore;
     }
 
+    public int getTotalScore(){
+        return this.totalScore;
+    }
+
+    public double getAverageScore() {
+        return this.averageScore;
+    }
+
     public void ToString(){
-        System.out.println("id:" + this.id + " name:" + this.name);
+        System.out.format("id:%s name:%s\n",this.id,this.name);
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return  o.totalScore - this.totalScore;
     }
 }

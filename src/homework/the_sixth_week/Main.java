@@ -23,8 +23,16 @@ public class Main {
         studentHttpChineseReader.LoadStudentScore();
         StudentHttpReader studentHttpEnglishReader = new StudentHttpReader(Englishurl);
         studentHttpEnglishReader.LoadStudentScore();
+//        studentManager.PrintAll();
+        System.out.println(StudentManager.students.size());
+        studentManager.sortByTotal();
         studentManager.PrintAll();
-
+//        System.out.println("查询数学成绩优秀的人");
+//        ArrayList<Student> students = studentManager.findByScore("math",90,100);
+//        for(Student stu:students){
+//            stu.ToString();
+//        }
+        studentManager.saveAs("D:\\Desktop\\copy.txt");
 
     }
 }
