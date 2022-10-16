@@ -33,7 +33,7 @@ public class StudentManager {
         return this.student;
     }
 
-    public ArrayList<Student> ScoreAnalysis(){
+    public static ArrayList<Student> ScoreAnalysis(){
         for(Student stu:students){
             int total = stu.MathScore +
                     stu.ChineseScore + stu.EnglishScore;
@@ -69,13 +69,22 @@ public class StudentManager {
         String object = classType.toLowerCase();
         for(Student stu:students){
             if(object.equals("math")){
-                if(stu.MathScore >= min && stu.MathScore <= max) stus.add(stu);
+                if(stu.MathScore >= min && stu.MathScore <= max){
+                    stus.add(stu);
+                    stu.ToString();
+                }
             }
             else if(object.equals("chinese")){
-                if(stu.ChineseScore >= min && stu.ChineseScore <= max) stus.add(stu);
+                if(stu.ChineseScore >= min && stu.ChineseScore <= max){
+                    stus.add(stu);
+                    stu.ToString();
+                }
             }
             else if(object.equals("english")){
-                if(stu.EnglishScore >= min && stu.EnglishScore <= max) stus.add(stu);
+                if(stu.EnglishScore >= min && stu.EnglishScore <= max){
+                    stus.add(stu);
+                    stu.ToString();
+                }
             }
             else System.out.println("输入课程类别无效");
         }
@@ -86,7 +95,10 @@ public class StudentManager {
         ArrayList<Student> stus = new ArrayList<>();
         for(Student stu:students){
             double average = (stu.MathScore + stu.EnglishScore + stu.ChineseScore) / 3.0;
-            if(average >= min && average <= max) stus.add(stu);
+            if(average >= min && average <= max){
+                stus.add(stu);
+                stu.ToString();
+            }
         }
         return stus;
     }
@@ -114,11 +126,22 @@ public class StudentManager {
         return student;
     }
 
-    public static Student FindById(String id){
+    public  Student FindById(String id){
         for(Student stu:students){
-            if(stu.id.equals(id)) return stu;
+            if(stu.id.equals(id)){
+                return stu;
+            }
         }
-        System.out.println("找不到该学生");
+        return null;
+    }
+
+    public  Student FindbyId(String id){
+        for(Student stu:students){
+            if(stu.id.equals(id)){
+                stu.ToString();
+                return stu;
+            }
+        }
         return null;
     }
 }

@@ -72,7 +72,8 @@ public class Student implements Comparable<Student>{
     }
 
     public void ToString(){
-        System.out.format("id:%s name:%s\n",this.id,this.name);
+        System.out.format("id:%s name:%s mathscore:%d chinesescore:%d englishscore:%d totalscore:%d averagescore:%f\n"
+                ,this.id,this.name,this.MathScore,this.ChineseScore,this.EnglishScore,this.totalScore,this.averageScore);
     }
 
     @Override

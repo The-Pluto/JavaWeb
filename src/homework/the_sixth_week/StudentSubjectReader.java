@@ -2,8 +2,7 @@ package homework.the_sixth_week;
 
 import java.net.URL;
 
-public abstract class StudentSubjectReader {
-    private URL url;
+public class StudentSubjectReader extends StudentHttpReader{
 
     public void setUrl(URL url){
         this.url = url;
@@ -13,9 +12,8 @@ public abstract class StudentSubjectReader {
         return this.url;
     }
 
-    public static String getSubject(URL url){
-        String str = url.getFile();
-        String[] strs = str.split("/");
+    public static String getSubject(String url){
+        String[] strs = url.split("/");
         String object = strs[strs.length - 1];
         return object;
     }
