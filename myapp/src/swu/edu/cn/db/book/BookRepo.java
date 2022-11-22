@@ -17,9 +17,10 @@ public class BookRepo {
     }
 
     public void save(Book book) throws SQLException {
-        String template = "INSERT INTO `user`(`id`, `name`, `author`, `price`, `describe`) " +
-                " VALUES ('%s', '%s', '%s', %s, '%s')";
-        String sql = String.format(template,book.getId(),book.getName(),book.getAuthor(),book.getPrice(),book.getDescribe());
+        String template = "INSERT INTO `book`(`name`, `author`, `price`, `describe`) " +
+                " VALUES ('%s', '%s', %s, '%s')";
+        String sql = String.format(template,book.getName(),book.getAuthor(),book.getPrice(),book.getDescribe());
+//        System.out.println(sql);
         DBEngine.getGetInstance().execute(sql);
 
     }
@@ -41,4 +42,11 @@ public class BookRepo {
             }
         });
     }
+
+    public void deleteBookById(Long id) throws SQLException {
+        String template = "DELETE FROM `book` WHERE `id` = %s";
+        DBEngine.getGetInstance().execute(String.format(template,id));
+    }
+
+
 }

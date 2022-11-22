@@ -20,16 +20,28 @@ public class ListBookServlet extends HttpServlet {
             List<Book> books = BookRepo.getBookRepo().getAllBook();
             response.setContentType("text/html");
             try(Writer writer = response.getWriter()) {
+
                 writer.write("<h1 style=\"text-align:center;margin:50px auto\">欢迎访问线上书店</h1>");
 
                 writer.write("<table style = \"text-align:center;margin:0 auto\">");
-                for (Book book : books) {
-                    writer.write("<tr>");
-                    String str = " <td>%s</td><td>%s</td><td>%s</td><td>%s</td>";
-                    writer.write(String.format(str, book.getId(), book.getName(), book.getAuthor(), book.getPrice()));
+                for(int i=0 ; i<books.size(); ++i){
+                    Book book = books.get(i);
+                    if(i%2 == 0){
+                        writer.write("<tr style='background-color:#F5F5F5;height:2em'>");
+                    }
+                    else{
+                        writer.write("<tr style='background-color:#D6E6F2;height:2em'>");
+                    }
+                    writer.write(String.format("<td width='30px'>%s</td>",book.getId()));
+                    writer.write(String.format("<td width='150px'>%s</td>",book.getName()));
+                    writer.write(String.format("<td width='100px'>%s</td>",book.getAuthor()));
+                    writer.write(String.format("<td width='60px'>%s</td>",book.getPrice()));
+                    writer.write(String.format("<td><a href='./deleteBook?id=%s'>删除</a></td>",book.getId()));
                     writer.write("</tr>");
                 }
-                writer.write("</table>");
+                writer.write("</table><br><br>");
+
+                writer.write("<center><a href = 'index.html'> 返回首页 </a></center>");
 
             }
 

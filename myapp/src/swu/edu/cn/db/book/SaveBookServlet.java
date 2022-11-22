@@ -36,7 +36,9 @@ public class SaveBookServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try(Writer writer = response.getWriter()){
             String html = "<center style='margin-top:5em'><h1>%s</h1><br><br>" +
-                    "<a href = './submit-book.html'> 录入新图书 </a></center>";
+                    "<a href = './submit-book.html'> 录入新图书 </a>" +
+                    "<a href = './listBook'> 显示列表 </a>" +
+                    "<a href = './index.html'> 返回主页 </a> </center>";
             writer.write(String.format(html,message));
         }
     }

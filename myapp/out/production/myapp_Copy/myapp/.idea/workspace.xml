@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6e8cb1e-4a98-4fa5-bd8e-58329184e907" name="变更" comment="上周一未完成代码，暂时上传">
-      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-dbcp2-2.9.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-pool2-2.11.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/mysql-connector-j-8.0.31.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRoot/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRoot/submit-book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/db_init_sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/BookRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/ListBookServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/SaveBookServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/db/DBEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/db/RecordVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/user/UserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/swu/edu/cn/db/DBTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/swu/edu/cn/user/UserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/IsStudentReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/StudentAbstractReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/StudentFileReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/StudentHttpReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/StudentManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/StudentReaderFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_1/the_sixth_week/StudentSubjectReader.java" beforeDir="false" />
-    </list>
+    <list default="true" id="b6e8cb1e-4a98-4fa5-bd8e-58329184e907" name="变更" comment="上周一未完成代码，暂时上传" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +17,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -63,18 +35,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/MySQL/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Desktop/university/Sophomore/JAVA_Project/demo1/src/myapp",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Desktop\university\Sophomore\JAVA_Project\demo1\src\myapp\WebRoot\WEB-INF\lib" />
@@ -171,7 +143,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669046450362</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="上周一未完成代码，暂时上传">
+      <created>1669131156056</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669131156056</updated>
+    </task>
+    <task id="LOCAL-00004" summary="上周一未完成代码，暂时上传">
+      <created>1669132509809</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669132509809</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
