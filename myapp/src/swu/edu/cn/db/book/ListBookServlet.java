@@ -36,7 +36,11 @@ public class ListBookServlet extends HttpServlet {
                     writer.write(String.format("<td width='150px'>%s</td>",book.getName()));
                     writer.write(String.format("<td width='100px'>%s</td>",book.getAuthor()));
                     writer.write(String.format("<td width='60px'>%s</td>",book.getPrice()));
-                    writer.write(String.format("<td><a href='./deleteBook?id=%s'>É¾³ý</a></td>",book.getId()));
+                    writer.write(String.format("<td width='200px'>%s</td>",book.getDescribe()));
+                    writer.write(String.format("<td><a href='./deleteBook?id=%s'>" +
+                            "<img src='./images/delete.jpg' width = '30px'></a></td>",book.getId()));
+                    writer.write(String.format("<td><a href='./editBook?id=%s'>" +
+                            "<img src='./images/edit.jpg' width = '30px'></a></td>",book.getId()));
                     writer.write("</tr>");
                 }
                 writer.write("</table><br><br>");

@@ -1,5 +1,7 @@
 package swu.edu.cn.db.db;
 
+import swu.edu.cn.db.book.Book;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

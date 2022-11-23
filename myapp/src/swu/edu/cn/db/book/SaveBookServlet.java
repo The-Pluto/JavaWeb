@@ -13,6 +13,7 @@ import java.sql.SQLException;
 public class SaveBookServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String id = request.getParameter("id");
         String name = request.getParameter("name");
         String author = request.getParameter("author");
         String describe = request.getParameter("describe");
@@ -25,9 +26,13 @@ public class SaveBookServlet extends HttpServlet {
         book.setName(name);
         book.setPrice(Float.parseFloat(price));
 
+        if(id != null){
+            book.setId(Long.parseLong(id));
+        }
+
         String message = null;
         try {
-            BookRepo.getBookRepo().save(book);
+            BookRepo.getBookRepo().saveBook(book);
             message = "提交信息保存成功";
         }catch (SQLException e) {
             e.printStackTrace();
