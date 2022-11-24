@@ -47,7 +47,7 @@ public class index extends HttpServlet {
                 "  <div style=\"margin-top:2em; width: 50%\">\n" +
                 "    <div>\n" +
                 "      <div style=\"float:left;padding-right:3em\"><a href=\"./listBook\" style=\"text-decoration:none\">查 看 数 目</a></div>\n" +
-                "      <div style=\"float:left;padding-right:3em\"><a href=\"./login.html\" style=\"text-decoration:none\">管 理 员 登 录</a></div>\n" +
+                "      <div style=\"float:left;padding-right:3em\"><a href=\"./login\" style=\"text-decoration:none\">管 理 员 登 录</a></div>\n" +
                 "    </div>\n" +
                 "  </div>\n" +
 

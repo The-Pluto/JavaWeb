@@ -11,8 +11,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -40,7 +40,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/university/Sophomore/JAVA_Project/demo1/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/university/Sophomore/JAVA_Project/demo1/src/myapp&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -52,6 +52,7 @@
       <recent name="D:\Desktop\university\Sophomore\JAVA_Project\demo1\src\myapp\WebRoot\WEB-INF\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desktop\university\Sophomore\JAVA_Project\demo1\src\myapp\WebRoot" />
       <recent name="D:\Desktop\university\Sophomore\JAVA_Project\demo1\src\myapp_Copy\WebRoot" />
       <recent name="D:\Desktop\university\Sophomore\JAVA_Project\demo1\src\myapp_Copy\WebRoot\WEB-INF\lib" />
     </key>
