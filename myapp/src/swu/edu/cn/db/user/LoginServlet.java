@@ -1,5 +1,6 @@
 package swu.edu.cn.db.user;
 
+import com.mysql.cj.Session;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import swu.edu.cn.db.db.DBEngine;
@@ -21,7 +22,6 @@ public class LoginServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("user");
         String password = request.getParameter("password");
-
         if(username != null && password != null){
             this.doLogin(request,response);
         }else {
@@ -37,11 +37,17 @@ public class LoginServlet extends HttpServlet {
     private void doLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("user");
         String password = request.getParameter("password");
-
+        String code = request.getParameter("code");
+        String codeInSession = (String)request.getSession(true).getAttribute(ValidateCodeServlet.LOGIN_CODE);
+        if(!code.equalsIgnoreCase(codeInSession)){
+            System.out.println("验证码错误");
+            response.sendRedirect("./login");
+            return;
+        }
         try {
             User user = UserRepo.getinstance().auth(username,password);
             if(user != null) {
-                HttpSession session = request.getSession(true); //建立session
+                HttpSession session = request.getSession(); //建立session
                 session.setAttribute(LOGIN_TOKEN, Boolean.TRUE);//设置属性
                 response.sendRedirect("./admin.html");
             }

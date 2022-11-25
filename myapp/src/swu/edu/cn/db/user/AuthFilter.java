@@ -20,22 +20,23 @@ public class AuthFilter extends HttpFilter {
         System.out.println("auth filter");
 
         String uri = request.getRequestURI();
-        if(uri.endsWith("index.html") || uri.endsWith("login.html") ||
+        System.out.println("uri = " + uri);
+        if(uri.endsWith("index.html") || uri.endsWith("login.html") || uri.endsWith("/myapp/") || uri.endsWith("code") ||
                 uri.endsWith(".png") || uri.endsWith("css") || uri.endsWith("login")){
             filterChain.doFilter(request,response);
             return;
         }
 
         if(session == null){
-            System.out.println("auth failed");
+//            System.out.println("auth failed");
             response.sendRedirect("./login.html");
         } else {
             Boolean toke = (Boolean) session.getAttribute(LoginServlet.LOGIN_TOKEN);
             if (toke == Boolean.TRUE){
-                System.out.println("登陆验证成功");
+//                System.out.println("登陆验证成功");
                 filterChain.doFilter(request,response);
             }else{
-                System.out.println("auth failed");
+//                System.out.println("auth failed");
                 response.sendRedirect("./login.html");
             }
         }
