@@ -15,16 +15,11 @@ public class HouseRepo {
     }
 
     public void HouseAdd(float price,float size,int housesCount,String houseNumber) throws SQLException {
-        if(houseNumber != null){
-            HouseRepo.getInstance().EditByHouseNumber(houseNumber);
-        }
-        else{
-            String template = "INSERT INTO `house`(`price`,`size`,`housesCount`,`houseNumber`)" +
-                    "VALUES (%s, %s, %s, '%s')";
-            String sql = String.format(template,price,size,housesCount,houseNumber);
-            System.out.println(sql);
-            DBEngine.getInstance().execute(sql);
-        }
+        String template = "INSERT INTO `house`(`price`,`size`,`housesCount`,`houseNumber`)" +
+                "VALUES (%s, %s, %s, '%s')";
+        String sql = String.format(template,price,size,housesCount,houseNumber);
+        System.out.println(sql);
+        DBEngine.getInstance().execute(sql);
     }
 
     public House getHouseFromResultSet(ResultSet rs) throws SQLException {
@@ -60,12 +55,19 @@ public class HouseRepo {
         return houses.size()==0 ? null : houses.get(0);
     }
 
-    public void EditByHouseNumber(String houseNumber) throws SQLException {
-        House house = HouseRepo.getInstance().GetByHouseNumber(houseNumber);
-        String template = "UPDATE `house` SET (`price`=%s,`size`=%s,`housesCount`=%s) WHERE `houseNumber` = '%s'";
-        String sql = String.format(template,house.getPrice(),house.getSize(),house.getHousesCount());
+    public void EditByHouseNumber(House house) throws SQLException {
+        String template = "UPDATE `house` SET `price`=%s,`size`=%s,`housesCount`=%s WHERE `houseNumber` = '%s'";
+        String sql = String.format(template, house.getPrice(),house.getSize(),house.getHousesCount(),house.getHouseNumber());
         System.out.println(sql);
         DBEngine.getInstance().execute(sql);
     }
+
+    public void DeleteByHouseNumber(String houseNumber) throws SQLException {
+        String template = "DELETE FROM `house` WHERE `houseNumber`='%s'";
+        String sql = String.format(template,houseNumber);
+        System.out.println(sql);
+        DBEngine.getInstance().execute(sql);
+    }
+
 
 }
