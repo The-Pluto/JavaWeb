@@ -6,16 +6,35 @@ public class User {
     String sex;
     String id;
     String houseNumber;
+    String username;
+    String password;
+    String status;
 
-    public User() {
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public User(String name, int age, String sex, String id, String houseNumber) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.id = id;
-        this.houseNumber = houseNumber;
+    public String getStatus() {
+        return status;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public User() {
     }
 
     public void setName(String name) {

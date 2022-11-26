@@ -11,5 +11,6 @@
     <orderEntry type="library" name="commons-logging-1.2" level="project" />
     <orderEntry type="library" name="commons-pool2-2.11.1" level="project" />
     <orderEntry type="library" name="mysql-connector-j-8.0.31" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>
