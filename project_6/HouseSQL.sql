@@ -1,0 +1,1 @@
+INSERT INTO `house`(`owner`,`price`,`size`,`housesCount`)VALUES ('邵梁铖', 45.3, 100, 4)
