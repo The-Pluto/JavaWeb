@@ -31,30 +31,19 @@ public class LoginServlet extends HttpServlet {
         }
 
         try {
-            this.getUserFromDB(request,response);
+            this.doLogin(request,response);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-
     }
 
-    private void getUserFromDB(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+    private void doLogin(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String verificationCode = request.getParameter("code");
 
-        String template = "SELECT * FROM user WHERE `username`='%s' && `password`='%s'";
-        String sql = String.format(template,username,password);
-//        System.out.println(sql);
-        List<User> users = DBEngine.getInstance().query(sql, new RecordVisitor<User>() {
-            @Override
-            public User visit(ResultSet rs) throws SQLException {
-                return UserRepo.getInstance().getUserFromResultSet(rs);
-            }
-        });
-
-        User user = users.size() == 0 ? null : users.get(0);
+        User user = UserRepo.getInstance().userAuth(username,password);
         if(user != null){
             System.out.println("µÇÂ¼³É¹¦");
             response.sendRedirect("./admin.html");

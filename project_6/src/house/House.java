@@ -6,11 +6,14 @@ public class House {
     float size;
     int housesCount;
 
-    public House(String owner, float price, float size, int housesCount) {
-        this.owner = owner;
-        this.price = price;
-        this.size = size;
-        this.housesCount = housesCount;
+    String houseNumber;
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+
+    public String getHouseNumber() {
+        return houseNumber;
     }
 
     public House() {

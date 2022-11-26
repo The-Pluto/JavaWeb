@@ -7,9 +7,9 @@
 
     <display-name>Welcome to MyApp</display-name>
 
-    <!--    <welcome-file-list>-->
-    <!--        <welcome-file>myapp.html</welcome-file>-->
-    <!--    </welcome-file-list>-->
+<!--        <welcome-file-list>-->
+<!--            <welcome-file>index.html</welcome-file>-->
+<!--        </welcome-file-list>-->
 
     <description>
         Welcome to MyApp

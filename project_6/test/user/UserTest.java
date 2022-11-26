@@ -14,24 +14,27 @@ import java.util.List;
 public class UserTest {
     public static void main(String[] args) throws SQLException {
 //        这是增删操作的测试
-//        String template = "INSERT INTO `user`(`name`,`age`,`sex`,`id`,`username`,`password`,`status`)" +
-//                "VALUES ('%s', %s, '%s', '%s', '%s', '%s','%s')";
-//        String sql = String.format(template,"邵梁铖",20,"男","330324200304150818","2206884457","Slc20030415","管理员");
-//        System.out.println(sql);
-//        DBEngine.getInstance().execute(sql);
+        String template = "INSERT INTO `user`(`name`,`age`,`sex`,`id`,`username`,`password`,`status`)" +
+                "VALUES ('%s', %s, '%s', '%s', '%s', MD5('%s'),'%s')";
+        String sql = String.format(template,"邵梁铖",20,"男","330324200304150818","2206884457","Slc20030415","管理员");
+        System.out.println(sql);
+        DBEngine.getInstance().execute(sql);
 
 //        这是改查操作的测试
-        String sql = "SELECT * FROM `user`";
-        List<User> users = DBEngine.getInstance().query(sql, new RecordVisitor<User>() {
-            @Override
-            public User visit(ResultSet rs) throws SQLException {
-                return UserRepo.getInstance().getUserFromResultSet(rs);
-            }
-        });
+//        String sql = "SELECT * FROM `user`";
+//        List<User> users = DBEngine.getInstance().query(sql, new RecordVisitor<User>() {
+//            @Override
+//            public User visit(ResultSet rs) throws SQLException {
+//                return UserRepo.getInstance().getUserFromResultSet(rs);
+//            }
+//        });
+//
+//        for(User user:users){
+//            System.out.println(user.toString());
+//        }
 
-        for(User user:users){
-            System.out.println(user.toString());
-        }
+//        UserRepo.getInstance().save("1010084573","Slc20030415");
+
 
     }
 }

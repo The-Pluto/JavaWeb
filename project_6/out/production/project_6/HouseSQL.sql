@@ -1,1 +1,1 @@
-INSERT INTO `house`(`owner`,`price`,`size`,`housesCount`)VALUES ('邵梁铖', 45.3, 100, 4)
+SELECT * FROM user WHERE `username`='2206884457' && `password`='Slc20030415'
