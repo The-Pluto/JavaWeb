@@ -56,7 +56,7 @@ public class UserEditWeb extends HttpServlet {
                 "        <input type=\"submit\"><br><br>\n" +
                 "      </form>\n" +
                 "        <div style=\"text-align:center;margin-top:100px\">\n" +
-                "            <a href=\"./admin.html\" style=\"text-decoration:none\">返 回 管 理 者 菜 单</a>\n" +
+                "            <a href=\"./user.html\" style=\"text-decoration:none\">返 回 用 户 界 面</a>\n" +
                 "        </div>\n" +
                 "</body>\n" +
                 "</html>";
