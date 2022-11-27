@@ -43,10 +43,15 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         String verificationCode = request.getParameter("code");
 
-        User user = UserRepo.getInstance().userAuth(username,password);
+        User user = UserRepo.getInstance().userAuth(username);
         if(user != null){
+            if(user.getStatus().equals("管理员")){
+                response.sendRedirect("./admin.html");
+            }
+            else{
+                response.sendRedirect("./user.html");
+            }
             System.out.println("登录成功");
-            response.sendRedirect("./admin.html");
         }
         else{
             System.out.println("用户名或密码输入错误");

@@ -36,7 +36,7 @@ public class HouseAddServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try(Writer writer = response.getWriter()){
             String html = "<center style='margin-top:5em'><h1>%s</h1><br><br>" +
-                    "<a href = './add.html' style=\"text-decoration:none;padding-right:5px\"> 录入新图书 </a>" +
+                    "<a href = './add.html' style=\"text-decoration:none;padding-right:5px\"> 录入新房屋 </a>" +
                     "<a href = './listHouse' style=\"text-decoration:none;padding-right:5px\"> 显示列表 </a>" +
                     "<a href = './index.html' style=\"text-decoration:none;padding-right:5px\"> 返回主页 </a>" +
                     "<a href = './admin.html' style=\"text-decoration:none;padding-right:5px\"> 返回管理者网页 </a> </center>";

@@ -6,6 +6,7 @@ import src.house.HouseRepo;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepo {
@@ -23,9 +24,9 @@ public class UserRepo {
         DBEngine.getInstance().execute(sql);
     }
 
-    public User userAuth(String username,String password) throws SQLException {
-        String template = "SELECT * FROM user WHERE `username`='%s' && `password`=MD5('%s')";
-        String sql = String.format(template,username,password);
+    public User userAuth(String username) throws SQLException {
+        String template = "SELECT * FROM user WHERE `username`='%s'";
+        String sql = String.format(template,username);
 //        System.out.println(sql);
         List<User> users = DBEngine.getInstance().query(sql, new RecordVisitor<User>() {
             @Override
@@ -48,6 +49,34 @@ public class UserRepo {
         return user;
     }
 
+    public List<User> getAllUsers() throws SQLException {
+        String sql = "SELECT * FROM `user`";
+        List<User> users = new ArrayList<>();
+        users = DBEngine.getInstance().query(sql, new RecordVisitor<User>() {
+            @Override
+            public User visit(ResultSet rs) throws SQLException {
+                return UserRepo.getInstance().getUserFromResultSet(rs);
+            }
+        });
+        return users;
+    }
 
+    public void DeleteByUserName(String username) throws SQLException {
+        String template = "DELETE FROM `user` WHERE `username` = '%s'";
+        String sql = String.format(template,username);
+        DBEngine.getInstance().execute(sql);
+        System.out.println(sql);
+    }
 
+    public User getUserByUsername(String username) throws SQLException {
+        String template = "SELECT * FROM `user` WHERE `username` = %s";
+        String sql = String.format(template,username);
+        List<User> users = DBEngine.getInstance().query(sql, new RecordVisitor<User>() {
+            @Override
+            public User visit(ResultSet rs) throws SQLException {
+                return UserRepo.getInstance().getUserFromResultSet(rs);
+            }
+        });
+        return users.size() == 0 ? null : users.get(0);
+    }
 }
