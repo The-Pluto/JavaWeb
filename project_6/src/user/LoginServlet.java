@@ -14,6 +14,8 @@ public class LoginServlet extends HttpServlet {
 
     public final static String LOGIN_TOKEN = "USER_LOGIN_TOKEN";
     public final static String LOGIN_USER = "RECORD_USERNAME";
+
+    public final static String LOGIN_CODE = "LOGIN_CODE";
     @Override
     public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException {
         this.doPost(request,response);
@@ -49,7 +51,12 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String verificationCode = request.getParameter("code");
-
+        String codeInSession = (String)request.getSession(true).getAttribute(ValidateCodeServlet.LOGIN_CODE);
+        if(!verificationCode.equalsIgnoreCase(codeInSession)){
+            System.out.println("ÑéÖ¤Âë´íÎó");
+            response.sendRedirect("./login");
+            return;
+        }
         User user = UserRepo.getInstance().userAuth(username,password);
         if(user != null){
             HttpSession session = request.getSession();
