@@ -24,9 +24,9 @@ public class UserRepo {
         DBEngine.getInstance().execute(sql);
     }
 
-    public User userAuth(String username) throws SQLException {
-        String template = "SELECT * FROM user WHERE `username`='%s'";
-        String sql = String.format(template,username);
+    public User userAuth(String username,String password) throws SQLException {
+        String template = "SELECT * FROM user WHERE `username`='%s' && `password`=MD5('%s')";
+        String sql = String.format(template,username,password);
 //        System.out.println(sql);
         List<User> users = DBEngine.getInstance().query(sql, new RecordVisitor<User>() {
             @Override
@@ -34,7 +34,8 @@ public class UserRepo {
                 return UserRepo.getInstance().getUserFromResultSet(rs);
             }
         });
-        return users.size() == 0 ? null : users.get(0);
+        User user = users.size() == 0 ? null : users.get(0);
+        return user;
     }
     public User getUserFromResultSet(ResultSet rs) throws SQLException {
         User user = new User();
@@ -78,5 +79,19 @@ public class UserRepo {
             }
         });
         return users.size() == 0 ? null : users.get(0);
+    }
+
+    public void editUserByUsername(User user) throws SQLException {
+        String name = user.getName();
+        Integer age = user.getAge();
+        String id = user.getId();
+        String houseNumber = user.getHouseNumber();
+        String username = user.getUsername();
+        String sex = user.getSex();
+        String template = "UPDATE `user` SET `name` = '%s', `age` = %s, `sex` = '%s', `id` = '%s', `houseNumber` = '%s' " +
+                "WHERE `username` = '%s'";
+        String sql = String.format(template,name,age,sex,id,houseNumber,username);
+        System.out.println(sql);
+        DBEngine.getInstance().execute(sql);
     }
 }

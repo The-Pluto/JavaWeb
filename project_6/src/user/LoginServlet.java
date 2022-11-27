@@ -4,17 +4,17 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import src.db.DBEngine;
-import src.db.RecordVisitor;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
+    public final static String LOGIN_TOKEN = "USER_LOGIN_TOKEN";
+    public final static String LOGIN_USER = "RECORD_USERNAME";
+    @Override
     public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException {
         this.doPost(request,response);
     }
@@ -24,18 +24,25 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         String verificationCode = request.getParameter("code");
 
-        if(username == null && password == null){
-            System.out.println("session不存在，需要登陆");
-            response.sendRedirect("./login.html");
-            return;
-        }
 
-        try {
-            this.doLogin(request,response);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        if(username != null && password != null){
+            try {
+                this.doLogin(request,response);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }else{
+            HttpSession session = request.getSession(Boolean.FALSE);
+            if(session == null || session.getAttribute(LoginServlet.LOGIN_TOKEN) == null){
+                response.sendRedirect("./login.html");
+            }else{
+                if(session.getAttribute(LoginServlet.LOGIN_TOKEN).equals("admin")){
+                    response.sendRedirect("./admin.html");
+                } else{
+                    response.sendRedirect("./user.html");
+                }
+            }
         }
-
     }
 
     private void doLogin(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
@@ -43,12 +50,16 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         String verificationCode = request.getParameter("code");
 
-        User user = UserRepo.getInstance().userAuth(username);
+        User user = UserRepo.getInstance().userAuth(username,password);
         if(user != null){
+            HttpSession session = request.getSession();
             if(user.getStatus().equals("管理员")){
+                session.setAttribute(LoginServlet.LOGIN_TOKEN,"admin");
                 response.sendRedirect("./admin.html");
             }
             else{
+                session.setAttribute(LoginServlet.LOGIN_TOKEN,"guest");
+                session.setAttribute(LoginServlet.LOGIN_USER,String.format(username));
                 response.sendRedirect("./user.html");
             }
             System.out.println("登录成功");

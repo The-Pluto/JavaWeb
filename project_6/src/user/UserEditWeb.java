@@ -4,6 +4,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import src.house.House;
 import src.house.HouseRepo;
 
@@ -20,7 +21,9 @@ public class UserEditWeb extends HttpServlet {
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = request.getParameter("username");
+        HttpSession session = request.getSession();
+        String username = String.valueOf(session.getAttribute(LoginServlet.LOGIN_USER));
+
         User user = null;
         try {
             user = UserRepo.getInstance().getUserByUsername(username);
@@ -35,7 +38,7 @@ public class UserEditWeb extends HttpServlet {
                 "    <title>Add new user</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "      <h1 style=\"padding-top:1em;text-align:center\">添 加 房 屋</h1><br><br>\n" +
+                "      <h1 style=\"padding-top:1em;text-align:center\">个人信息修改</h1><br><br>\n" +
                 "\n" +
                 "          <div style=\"width:45%\">\n" +
                 "              <div style=\"float:right\">姓名</div><br><br>\n" +

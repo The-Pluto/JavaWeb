@@ -27,7 +27,7 @@ public class UserListServlet extends HttpServlet {
 
                 writer.write("<h1 style=\"text-align:center;margin:50px auto\">用 户 信 息</h1>");
                 writer.write("<div style=\"text-align:center;height:22px\">");
-                writer.write("<div style=\"text-align:center;float:left;padding-left:270px\">姓名</div>");
+                writer.write("<div style=\"text-align:center;float:left;padding-left:290px\">姓名</div>");
                 writer.write("<div style=\"text-align:center;float:left;padding-left:20px\">年龄</div>");
                 writer.write("<div style=\"text-align:center;float:left;padding-left:5px\">性别</div>");
                 writer.write("<div style=\"text-align:center;float:left;padding-left:50px\">身份证</div>");
@@ -51,8 +51,8 @@ public class UserListServlet extends HttpServlet {
                     writer.write(String.format("<td width='50px'>%s</td>",user.getUsername()));
                     writer.write(String.format("<td><a href='./deleteUser?username=%s'>" +
                             "<img src='./images/delete.jpg' width = '30px'></a></td>",user.getUsername()));
-                    writer.write(String.format("<td><a href='./editUser?username=%s'>" +
-                            "<img src='./images/edit.jpg' width = '30px'></a></td>",user.getUsername()));
+//                    writer.write(String.format("<td><a href='./editUser?username=%s'>" +
+//                            "<img src='./images/edit.jpg' width = '30px'></a></td>",user.getUsername()));
                     writer.write("</tr>");
                 }
                 writer.write("</table><br><br>");

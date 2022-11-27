@@ -19,7 +19,7 @@ public class UserRegisterServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String message = null;
         try {
-            User user = UserRepo.getInstance().userAuth(username);
+            User user = UserRepo.getInstance().userAuth(username,password);
             if(user != null){
                 message ="该用户已被注册";
                 try(Writer writer = response.getWriter()){
