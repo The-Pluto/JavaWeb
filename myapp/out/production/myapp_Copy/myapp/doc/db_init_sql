@@ -1,0 +1,9 @@
+
+CREATE TABLE user(
+    `id` VARCHAR(20) NOT NULL,
+    `name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+    `user` VARCHAR(20),
+    `password` VARCHAR(12),
+    PRIMARY KEY(`id`)
+)
+
