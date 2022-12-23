@@ -7,7 +7,17 @@ public class Book {
     private float price;
     private String describe;
 
-    public Book(long id,String name,String author,float price,String describe){
+    private String picture;
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public Book(long id, String name, String author, float price, String describe){
         this.id = id;
         this.name = name;
         this.author = author;

@@ -21,8 +21,9 @@ public class AuthFilter extends HttpFilter {
 
         String uri = request.getRequestURI();
 //        System.out.println("uri = " + uri);
-        if(uri.endsWith("index.html") || uri.endsWith("login.html") || uri.endsWith("/myapp/") || uri.endsWith("code") ||
-                uri.endsWith(".png") || uri.endsWith("css") || uri.endsWith("login") || uri.endsWith("test")){
+        if(uri.endsWith("index.html") || uri.endsWith("/api/books") || uri.endsWith("login.html") ||
+                uri.endsWith("/myapp/") || uri.endsWith("code") || uri.endsWith(".png") ||
+                uri.endsWith("css") || uri.endsWith("login") || uri.endsWith("test")){
             filterChain.doFilter(request,response);
             return;
         }

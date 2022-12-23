@@ -22,17 +22,17 @@ public class BookRepo {
         }
     }
     private void InsertBook(Book book) throws SQLException {
-        String template = "INSERT INTO `book`(`name`, `author`, `price`, `describe`) " +
-                " VALUES ('%s', '%s', %s, '%s')";
-        String sql = String.format(template,book.getName(),book.getAuthor(),book.getPrice(),book.getDescribe());
+        String template = "INSERT INTO `book`(`name`, `author`, `price`, `describe`, `picture`) " +
+                " VALUES ('%s', '%s', %s, '%s','%s')";
+        String sql = String.format(template,book.getName(),book.getAuthor(),book.getPrice(),book.getDescribe(),book.getPicture());
 //        System.out.println(sql);
         DBEngine.getGetInstance().execute(sql);
     }
 
     private void editBookById(Book book) throws SQLException {
-        String template = "UPDATE `book` SET `name` = \"%s\", `author` = \"%s\", `price` = %s, `describe` = \"%s\" " +
+        String template = "UPDATE `book` SET `name` = \"%s\", `author` = \"%s\", `price` = %s, `describe` = \"%s\",`picture` = \"%s\" " +
                 "WHERE `id` = %s";
-        String sql = String.format(template,book.getName(),book.getAuthor(),book.getPrice(),book.getDescribe(),book.getId());
+        String sql = String.format(template,book.getName(),book.getAuthor(),book.getPrice(),book.getDescribe(),book.getPicture(),book.getId());
         System.out.println(sql);
         DBEngine.getGetInstance().execute(sql);
     }
@@ -72,6 +72,7 @@ public class BookRepo {
         book.setAuthor(rs.getString("author"));
         book.setPrice(rs.getFloat("price"));
         book.setDescribe(rs.getString("describe"));
+        book.setPicture(rs.getString("picture"));
         return book;
     }
 

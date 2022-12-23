@@ -1,12 +1,16 @@
 .book-group {
-    width: 87%;
-    background-color: #ccc;
+    width: 55%;
     text-align:center;
     margin-top: 2em;
+    overflow:hidden;
 }
 
 .book-div {
     float: left;
+    width: 200px;
+    height:500px;
+    margin-top: 2em;
+    margin-right:1em;
 }
 
 .book-name {
@@ -19,4 +23,7 @@
 
 .book-price {
     color: #FF0000;
+}
+
+.book-pic{
 }
