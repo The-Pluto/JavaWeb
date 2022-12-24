@@ -31,14 +31,14 @@ public class EditBookServlet extends HttpServlet {
                 "<body>\n" +
                 "<center>\n" +
                 "  <div style=\"margin-top:5em; padding:2em; text-align:center;width:60%;background-color:#EEEEE\">\n" +
-                "    <h2>–ﬁ∏ƒÕº È–≈œ¢</h2>\n" +
+                "    <h2>‰øÆÊîπÂõæ‰π¶‰ø°ÊÅØ</h2>\n" +
                 "    <form action=\"./saveBook\" method=\"post\">\n" +
-                "      ±‡ ∫≈: <input type=\"hidden\" name=\"id\" value = \""+ book.getId() + "\"></label><br><br>" +
-                "       È √˚: <input type=\"text\" name=\"name\" value = \"" + book.getName() +"\"><br><br>\n" +
-                "      ◊˜ ’ﬂ: <input type=\"text\" name=\"author\" value = \"" + book.getAuthor() + "\"><br><br>\n" +
-                "      º€ ∏Ò: <input type=\"text\" name=\"price\" value = \"" + book.getPrice() + "\"><br><br>\n" +
-                "      ºÚ ΩÈ: <textarea name=\"describe\" rows=\"4\" cols=\"22\"> " + book.getDescribe() + "</textarea><br><br>\n" +
-                "      <input type=\"submit\" value=\"Ã·Ωª–≈œ¢\">\n" +
+                "      Áºñ Âè∑: <input type=\"hidden\" name=\"id\" value = \""+ book.getId() + "\"></label><br><br>" +
+                "      ‰π¶ Âêç: <input type=\"text\" name=\"name\" value = \"" + book.getName() +"\"><br><br>\n" +
+                "      ‰Ωú ËÄÖ: <input type=\"text\" name=\"author\" value = \"" + book.getAuthor() + "\"><br><br>\n" +
+                "      ‰ª∑ Ê†º: <input type=\"text\" name=\"price\" value = \"" + book.getPrice() + "\"><br><br>\n" +
+                "      ÁÆÄ ‰ªã: <textarea name=\"describe\" rows=\"4\" cols=\"22\"> " + book.getDescribe() + "</textarea><br><br>\n" +
+                "      <input type=\"submit\" value=\"Êèê‰∫§‰ø°ÊÅØ\">\n" +
                 "    </form>\n" +
                 "  </div>\n" +
                 "</center>\n" +

@@ -55,18 +55,18 @@ public class SaveBookServlet extends HttpServlet {
         String message = null;
         try {
             BookRepo.getBookRepo().saveBook(book);
-            message = "Ìá½»ĞÅÏ¢±£´æ³É¹¦";
+            message = "æäº¤ä¿¡æ¯ä¿å­˜æˆåŠŸ";
         }catch (SQLException e) {
             e.printStackTrace();
-            message = "Ìá½»ĞÅÏ¢±£´æÊ§°Ü!";
+            message = "æäº¤ä¿¡æ¯ä¿å­˜å¤±è´¥!";
         }
 
         response.setContentType("text/html;charset=UTF-8");
         try(Writer writer = response.getWriter()){
             String html = "<center style='margin-top:5em'><h1>%s</h1><br><br>" +
-                    "<a href = './submit-book.html'> Â¼ÈëĞÂÍ¼Êé </a>" +
-                    "<a href = './listBook'> ÏÔÊ¾ÁĞ±í </a>" +
-                    "<a href = './index.html'> ·µ»ØÖ÷Ò³ </a> </center>";
+                    "<a href = './submit-book.html'> å½•å…¥æ–°å›¾ä¹¦ </a>" +
+                    "<a href = './listBook'> æ˜¾ç¤ºåˆ—è¡¨ </a>" +
+                    "<a href = './index.html'> è¿”å›ä¸»é¡µ </a> </center>";
             writer.write(String.format(html,message));
         }
     }

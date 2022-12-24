@@ -13,7 +13,7 @@ public class DBEngine {
 
     private static DBEngine Instance = new DBEngine();
     private BasicDataSource dataSource = null;
-    //Visitor 模式
+    //Visitor 妯″紡
 
     private DBEngine(){
 
@@ -31,7 +31,7 @@ public class DBEngine {
             ds.setUsername("root");;
             ds.setPassword("slc030415");
 
-            //设置其他功能
+            //璁剧疆鍏朵粬鍔熻兘
             ds.setInitialSize(10);
             ds.setMaxIdle(4);
             this.dataSource = ds;
@@ -47,14 +47,14 @@ public class DBEngine {
         }
     }
 
-    //泛型
+    //娉涘瀷
     public <T> List<T> query(String sql, swu.edu.cn.db.db.RecordVisitor<T> visitor) throws SQLException {
         List<T> result = new ArrayList<>();
         try(Connection connection = this.getDataSource().getConnection()){
             try(Statement statement = connection.createStatement()){
                 try(ResultSet resultSet = statement.executeQuery(sql)) {
                     while (resultSet.next()){
-                        //Visitor 模式
+                        //Visitor 妯″紡
                         T obj = visitor.visit(resultSet);
                         result.add(obj);
                     }

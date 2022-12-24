@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-//�洢
+//存储
 public class UserRepo {
     private static UserRepo instance = new UserRepo();
 

@@ -19,7 +19,7 @@ public class DeleteBookServlet extends HttpServlet {
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
-        //ÖØ¶¨Ïò»ØÔ­À´µÄÍøÒ³
+        //é‡å®šå‘å›åŸæ¥çš„ç½‘é¡µ
         response.sendRedirect("./listBook");
     }
 

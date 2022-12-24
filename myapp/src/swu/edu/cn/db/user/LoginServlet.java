@@ -40,15 +40,15 @@ public class LoginServlet extends HttpServlet {
         String code = request.getParameter("code");
         String codeInSession = (String)request.getSession(true).getAttribute(ValidateCodeServlet.LOGIN_CODE);
         if(!code.equalsIgnoreCase(codeInSession)){
-            System.out.println("ÑéÖ¤Âë´íÎó");
+            System.out.println("éªŒè¯ç é”™è¯¯");
             response.sendRedirect("./login");
             return;
         }
         try {
             User user = UserRepo.getinstance().auth(username,password);
             if(user != null) {
-                HttpSession session = request.getSession(); //½¨Á¢session
-                session.setAttribute(LOGIN_TOKEN, Boolean.TRUE);//ÉèÖÃÊôĞÔ
+                HttpSession session = request.getSession(); //å»ºç«‹session
+                session.setAttribute(LOGIN_TOKEN, Boolean.TRUE);//è®¾ç½®å±æ€§
                 response.sendRedirect("./admin.html");
             }
             else{

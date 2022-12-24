@@ -34,7 +34,7 @@ public class AuthFilter extends HttpFilter {
         } else {
             Boolean toke = (Boolean) session.getAttribute(LoginServlet.LOGIN_TOKEN);
             if (toke == Boolean.TRUE){
-//                System.out.println("登陆验证成功");
+//                System.out.println("鐧婚檰楠岃瘉鎴愬姛");
                 filterChain.doFilter(request,response);
             }else{
 //                System.out.println("auth failed");

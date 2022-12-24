@@ -31,8 +31,8 @@ public class Index extends HttpServlet {
             sb.append("<div class='book-div'>");
             sb.append("<div class='book-pic'><img src=\"./upload/" + book.getPicture() + "\" style='width:150px'/></div>");
             sb.append("<div class='book-name'>" + book.getName() + "</div>");
-            sb.append("<div class='book-author'>×÷Õß: " + book.getAuthor() + "</div>");
-            sb.append("<div class='book-price'>¼Û¸ñ£º" + book.getPrice()+ "</div>");
+            sb.append("<div class='book-author'>ä½œè€…: " + book.getAuthor() + "</div>");
+            sb.append("<div class='book-price'>ä»·æ ¼ï¼š" + book.getPrice()+ "</div>");
             sb.append("</div>\n");
         }
         sb.append("</div><br>\n");
@@ -45,13 +45,13 @@ public class Index extends HttpServlet {
                 "    </head>\n" +
                 "    <body>\n" +
                 "        <center style=\"margin-top:1em\">\n" +
-                "            <h1>»¶Ó­·ÃÎÊÎÒµÄÍøÉÏÊéµê</h1>\n" +
+                "            <h1>æ¬¢è¿è®¿é—®æˆ‘çš„ç½‘ä¸Šä¹¦åº—</h1>\n" +
                 "            <div style=\"margin-top:2em; width: 50%\">\n" +
 //                "                <div>\n" +
-//                "                    <div style=\"float:left;padding-right:3em\"><a href=\"./listBook\">²é¿´Í¼Êé</a></div>\n" +
+//                "                    <div style=\"float:left;padding-right:3em\"><a href=\"./listBook\">æŸ¥çœ‹å›¾ä¹¦</a></div>\n" +
 //                "                </div>\n" +
                 "                <div>\n" +
-                "                    <div style=\"float:left;padding-right:3em\"><a href=\"./login\">µÇÂ¼ºóÌ¨</a></div>\n" +
+                "                    <div style=\"float:left;padding-right:3em\"><a href=\"./login\">ç™»å½•åå°</a></div>\n" +
                 "                </div>\n" +
                 "            </div>\n" +
                 "            <br><hr width='80%'>\n" +

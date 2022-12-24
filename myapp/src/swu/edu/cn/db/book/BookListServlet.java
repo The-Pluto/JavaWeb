@@ -19,7 +19,7 @@ public class BookListServlet extends HttpServlet {
             response.setContentType("text/html; charset=UTF-8");
             try(Writer writer = response.getWriter()) {
                 writer.write("<center style=\"margin-top:5em\">\n");
-                writer.write("<h1>»¶Ó­·ÃÎÊÎÒµÄÍøÉÏÊéµê</h1>\n");
+                writer.write("<h1>æ¬¢è¿è®¿é—®æˆ‘çš„ç½‘ä¸Šä¹¦åº—</h1>\n");
 
                 writer.write("<table width='55%' border='0' cellpadding=4>");
                 for(int i=0; i<books.size(); i++) {
@@ -43,7 +43,7 @@ public class BookListServlet extends HttpServlet {
                 }
                 writer.write("</table><br><br>\n\n");
 
-                writer.write("<a href='./admin.html'>·µ »Ø Ê× Ò³</a>\n");
+                writer.write("<a href='./admin.html'>è¿” å› é¦– é¡µ</a>\n");
                 writer.write("</center>\n");
 
             }
