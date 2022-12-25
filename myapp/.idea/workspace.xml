@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6e8cb1e-4a98-4fa5-bd8e-58329184e907" name="变更" comment="上周一未完成代码，暂时上传">
-      <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_dbcp2_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_31.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/AddToCartServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/GetBooksinCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/RemoveFromCart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/myapp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp_Copy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/book/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/book/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/book/BookListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/book/BookListServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/book/BookRepo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/book/BookRepo$1.class" afterDir="false" />
@@ -30,47 +30,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/user/UserRepo$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/user/UserRepo$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/user/UserRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/user/UserRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/user/ValidateCodeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myapp/swu/edu/cn/db/user/ValidateCodeServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/libraries/commons_dbcp2_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/libraries/commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/libraries/commons_pool2_2_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/libraries/mysql_connector_j_8_0_31.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/libraries/mysql_connector_j_8_0_311.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/libraries/servlet_api.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/WEB-INF/lib/commons-dbcp2-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/WEB-INF/lib/commons-fileupload-1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/WEB-INF/lib/commons-io-2.11.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/WEB-INF/lib/commons-pool2-2.11.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/WEB-INF/lib/mysql-connector-j-8.0.31.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/images/delete.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/images/edit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/images/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/submit-book.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/WebRoot/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/doc/db_init_sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/doc/login" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/myapp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myapp_Copy/myapp/myapp_Copy.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/Index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/Index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/book/BookListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/BookListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/book/DeleteBookServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/DeleteBookServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/book/EditBookServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/EditBookServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/book/SaveBookServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/SaveBookServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/db/DBEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/db/DBEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/book/BookRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/book/BookRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/user/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/user/AuthFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/user/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/user/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swu/edu/cn/db/user/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swu/edu/cn/db/user/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../project_6/out/production/project_6/WebRoot/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../project_6/out/production/project_6/WebRoot/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>

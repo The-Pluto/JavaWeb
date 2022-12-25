@@ -94,7 +94,7 @@
           <marquee><p class="mb-3">跨年打折</p></marquee>
           <a class="btn btn-primary m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button" rel="nofollow"
             target="_blank">注册会员</a>
-          <a class="btn btn-primary m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
+          <a class="btn btn-primary m-2" href="./cart.html" target="_blank"
             role="button">进入购物车</a>
         </div>
         <!-- Jumbotron -->
@@ -151,8 +151,16 @@
         $.getJSON("./api/books",function(books){
             refreshBookList(books);
         });
-        console.log("aaa");
       });
+
+      function addToCart(event){
+        var btn=$(event.target);
+        var bookId = btn.attr("id");
+        console.log(bookId);
+        $.getJSON("./api/addToCart?id=" + bookId,function(message){
+            console.log(message);
+        });
+      }
 
       function refreshBookList(books){
         for(var i=0 ; i<books.length ; ++i){
@@ -171,7 +179,10 @@
                 <h5 class="card-title">《${book.name}》</h5>
                 <p class="card-text">${book.describe}</p>
                 <p class="card-text">作者：${book.author},价格<font color="red">${book.price}</font></p>
-                <a href="#!" class="btn btn-primary">查看详情</a>
+                <button type="button" class="btn btn-primary" id="${book.id}" onclick="addToCart(event)">
+                <i class="fas fa-cart-plus"></i>
+                加入购物车
+                </button>
               </div>
             </div>
           </div>

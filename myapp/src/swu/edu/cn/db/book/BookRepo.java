@@ -65,6 +65,23 @@ public class BookRepo {
 
     }
 
+    public List<Book> getByIds(List<Long> ids) throws SQLException {
+        String template = "SELECT * FROM `book` WHERE `id` IN (%s)";
+        String strId = "";
+        for(int i=0 ; i<ids.size() ; ++i){
+            strId += ((i>0) ? "," : "") + ids.get(i);
+        }
+        String sql = String.format(template,strId);
+        List<Book> books = DBEngine.getGetInstance().query(sql, new RecordVisitor<Book>() {
+            @Override
+            public Book visit(ResultSet rs) throws SQLException {
+                return BookRepo.getBookRepo().getBookFromResultSet(rs);
+            }
+        });
+        return books;
+
+    }
+
     private Book getBookFromResultSet(ResultSet rs) throws SQLException {
         Book book = new Book();
         book.setId(rs.getLong("id"));

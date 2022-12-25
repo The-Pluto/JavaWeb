@@ -23,7 +23,9 @@ public class AuthFilter extends HttpFilter {
 //        System.out.println("uri = " + uri);
         if(uri.endsWith("index.html") || uri.endsWith("/api/books") || uri.endsWith("login.html") ||
                 uri.endsWith("/myapp/") || uri.endsWith("code") || uri.endsWith(".png") ||
-                uri.endsWith("css") || uri.endsWith("login") || uri.endsWith("test")){
+                uri.endsWith("css") || uri.endsWith("login") || uri.endsWith("test") ||
+                uri.endsWith("api/addToCart") || uri.endsWith("cart.html") || uri.endsWith("api/GetBooksinCart") ||
+                uri.endsWith("api/removeFromCart")){
             filterChain.doFilter(request,response);
             return;
         }

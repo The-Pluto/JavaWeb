@@ -49,6 +49,7 @@ public class LoginServlet extends HttpServlet {
             if(user != null) {
                 HttpSession session = request.getSession(); //建立session
                 session.setAttribute(LOGIN_TOKEN, Boolean.TRUE);//设置属性
+                System.out.println("登陆失败");
                 response.sendRedirect("./admin.html");
             }
             else{
