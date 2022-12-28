@@ -69,13 +69,14 @@ public class RoleRepo {
         return roles.size()==0 ? null : roles.get(0);
     }
 
-    public List<Role> getByrolenames(List<Long> rolenames) throws SQLException {
+    public List<Role> getByrolenames(List<String> rolenames) throws SQLException {
         String template = "SELECT * FROM `role` WHERE `rolename` IN (%s) ";
         String names = "";
         for(int i=0 ; i<rolenames.size() ; ++i){
-            names += ((i>0) ? "," : "") + rolenames.get(i);
+            names += ((i>0) ? "," : "") + "\"" + rolenames.get(i) + "\"";
         }
         String sql = String.format(template,names);
+        System.out.println(sql);
         List<Role> roles = DBEngine.getGetInstance().query(sql, new RecordVisitor<Role>() {
             @Override
             public Role visit(ResultSet rs) throws SQLException {

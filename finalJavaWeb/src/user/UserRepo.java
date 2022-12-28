@@ -76,4 +76,10 @@ public class UserRepo {
         user.setUUID(rs.getString("UUID"));
         return user;
     }
+
+    public void changePassword(User user) throws SQLException {
+        String template = "UPDATE `user` SET `password` = MD5('%s') WHERE `UUID` = \"%s\"";
+        String sql = String.format(template,"123456",user.getUUID());
+        DBEngine.getGetInstance().execute(sql);
+    }
 }

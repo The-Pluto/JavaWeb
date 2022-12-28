@@ -4,8 +4,8 @@ CREATE TABLE IF NOT EXISTS `role`(
    `rolename` VARCHAR(10) NOT NULL,
    `strength` FLOAT UNSIGNED NOT NULL,
    `country` VARCHAR(10) NOT NULL,
-   `skill` VARCHAR(200) NOT NULL,
-   `describe` VARCHAR(200) NOT NULL,
+   `skill` VARCHAR(500) NOT NULL,
+   `describe` VARCHAR(500) NOT NULL,
    `picture` VARCHAR(200) NOT NULL,
    PRIMARY KEY ( `rolename` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

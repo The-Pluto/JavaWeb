@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>RoleDetail</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <a href="./index.html" style="margin:auto auto">
+        <div style="width:50px;height:50px">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+    </a>
+    <div id="role-group" style="margin:0 auto">
+
+    </div>
+</body>
+
+<script>
+
+  var url=decodeURI(window.location .href);
+  var aa=url.indexOf('=');
+  if (aa>-1){
+    url=url.substring(aa+1);
+    console.log(url);
+  }
+  editRole(url);
+
+  function editRole(url) {
+  $.getJSON("./api/edit?rolename=" + url, (role) => {
+      refreshRoleList(role);
+  });
+
+  function refreshRoleList(role){
+        console.log(role);
+        $("#role-group").append(`
+            <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="./upload/${role.picture}" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">[${role.country}]${role.rolename}</h5>
+                <p class="card-text">强度:${role.strength}<i class="fas fa-star"></i></p>
+                <p class="card-text">简介:${role.describe}</p>
+                <p class="card-text">武将技能:${role.skill}</p>
+      `);
+  }
+  }
+</script>
+</html>

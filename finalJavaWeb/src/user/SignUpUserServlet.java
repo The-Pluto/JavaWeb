@@ -36,11 +36,14 @@ public class SignUpUserServlet extends HttpServlet {
         }
         System.out.println(message);
 
-        response.setContentType("application/json;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         try(Writer writer = response.getWriter()){
-            this.writeJsonByJackson(writer,message);
+            String html = "<center style='margin-top:5em'><h1>%s</h1><br><br>" +
+                    "<h3> 你的UUID:%s </h3>" +
+                    "<a href = './login.html'> 登录 </a>" +
+                    "<a href = './index.html'> 返回主页 </a> </center>";
+            writer.write(String.format(html,message,UUID));
         }
-        response.sendRedirect("./feedback.html");
     }
 
     private void writeJsonByJackson(Writer writer, String message) throws IOException {

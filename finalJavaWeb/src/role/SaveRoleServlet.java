@@ -41,6 +41,16 @@ public class SaveRoleServlet extends HttpServlet {
             message = "提交信息保存失败!";
         }
         System.out.println(message);
+
+        response.setContentType("text/html;charset=UTF-8");
+        try(Writer writer = response.getWriter()){
+            String html = "<center style='margin-top:5em'><h1>%s</h1><br><br>" +
+                    "<a href = './addrole.html'> 添加新武将 </a>" +
+                    "<a href = './admin.html'> 返回管理者页面 </a>" +
+                    "<a href = './index.html'> 返回主页 </a> </center>";
+
+            writer.write(String.format(html,message));
+        }
     }
 
 
