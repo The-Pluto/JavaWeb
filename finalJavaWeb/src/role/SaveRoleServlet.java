@@ -27,7 +27,7 @@ public class SaveRoleServlet extends HttpServlet {
 
         Role role = null;
         try {
-            role = this.getBookFromRequest(request,response);
+            role = this.getRoleFromRequest(request,response);
         } catch (Exception e) {
             throw new IOException(e);
         }
@@ -54,7 +54,7 @@ public class SaveRoleServlet extends HttpServlet {
     }
 
 
-    private Role getBookFromRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    private Role getRoleFromRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         if(!ServletFileUpload.isMultipartContent(request)){
             return null;
